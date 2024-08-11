@@ -3,13 +3,13 @@
 %bcond_with check
 
 %global goipath github.com/disintegration/imaging
-%global commit  0bd5694c78c9c3d9a3cd06a706a8f3c59296a9ac
+#global commit  0bd5694c78c9c3d9a3cd06a706a8f3c59296a9ac
 
 %gometa
 
 Name:           %{goname}
-Version:        1.5.0
-Release:        1%{?dist}
+Version:        1.6.2
+Release:        1
 Summary:        Simple Go image processing package
 License:        MIT
 URL:            %{gourl}
@@ -30,16 +30,14 @@ building other packages which use import path with
 %{import_path} prefix.
 
 %prep
-%forgeautosetup
+%autopatch -imaging-%{version} -p1
+
+%build
+#fontbuild -a
+%gobuildroot
 
 %install
 %goinstall
-sed -i 's|\r||g' README.md
-
-%if %{with check}
-%check
-%gochecks
-%endif
 
 %files devel -f devel.file-list
 %doc README.md

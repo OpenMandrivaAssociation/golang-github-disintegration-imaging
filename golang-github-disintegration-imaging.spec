@@ -31,7 +31,7 @@ building other packages which use import path with
 %{import_path} prefix.
 
 %prep
-%autopatch -imaging-%{version} -p1
+%autopatch -n imaging-%{version} -p1
 
 %build
 #fontbuild -a

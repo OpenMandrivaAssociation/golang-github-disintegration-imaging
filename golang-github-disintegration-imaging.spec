@@ -3,7 +3,7 @@
 %bcond_with check
 
 %global goipath github.com/disintegration/imaging
-%global forgeurl	github.com/disintegration/imaging
+%global forgeurl	https://github.com/disintegration/imaging
 Version:        1.6.2
 #global commit  0bd5694c78c9c3d9a3cd06a706a8f3c59296a9ac
 
